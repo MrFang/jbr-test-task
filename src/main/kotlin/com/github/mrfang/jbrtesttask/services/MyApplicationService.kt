@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.mrfang.jbrtesttask.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.mrfang.jbrtesttask.MyBundle
 
 class MyApplicationService {
 
