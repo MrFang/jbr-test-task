@@ -4,15 +4,16 @@
     <name>jbr-test-task</name>
     <vendor>mrfang</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.python</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.mrfang.jbrtesttask.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.mrfang.jbrtesttask.services.MyProjectService"/>
+        <localInspection
+                         displayName="SDK: '==' or '!=' used instead of 'equals()'"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="com.github.mrfang.jbrtesttask.codeInspection.CLetterInTestNameInspection"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.mrfang.jbrtesttask.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
