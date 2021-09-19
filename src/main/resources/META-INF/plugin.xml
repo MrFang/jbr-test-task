@@ -9,11 +9,23 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <localInspection
-                         displayName="SDK: '==' or '!=' used instead of 'equals()'"
-                         groupBundle="messages.InspectionsBundle"
-                         groupKey="group.names.probable.bugs"
-                         enabledByDefault="true"
-                         level="WARNING"
-                         implementationClass="com.github.mrfang.jbrtesttask.codeInspection.CLetterInTestNameInspection"/>
+                displayName="'C' letter in test names"
+                groupBundle="messages.MessagesBundle"
+                enabledByDefault="true"
+                groupName="Test"
+                level="WARNING"
+                implementationClass="com.github.mrfang.jbrtesttask.codeInspection.CLetterInTestNameInspection"
+        />
+        <toolWindow
+                id="JBR Test Task Plugin"
+                secondary="true"
+                icon="AllIcons.General.Modified"
+                anchor="right"
+                factoryClass="com.github.mrfang.jbrtesttask.toolWindow.ReportToolWindowFactory"
+        />
+        <projectService
+                serviceInterface="com.github.mrfang.jbrtesttask.service.DataService"
+                serviceImplementation="com.github.mrfang.jbrtesttask.service.DataService"
+        />
     </extensions>
 </idea-plugin>
